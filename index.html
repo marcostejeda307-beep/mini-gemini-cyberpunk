@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI GEMINI OMEGA V15.5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="cyberpunk-theme">
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-microchip"></i> MEMORY</h2>
+                <button id="new-chat-btn"><i class="fa-solid fa-plus"></i> NUEVO CHAT</button>
+            </div>
+            <div id="history-list"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="chat-container">
+            <header>
+                <div class="model-info">
+                    <span class="status-dot"></span>
+                    <span id="current-model">SYSTEM: ONLINE</span>
+                </div>
+                <div class="controls">
+                    <button id="voice-toggle" title="Narrador IA">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div id="chat-messages">
+                <!-- Mensajes dinámicos aquí -->
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <label for="file-upload" class="cyber-button mini">
+                        <i class="fa-solid fa-paperclip"></i>
+                        <input type="file" id="file-upload" multiple hidden>
+                    </label>
+                    <textarea id="user-input" placeholder="Escribe tu comando aquí, Agente... (Enter para enviar)"></textarea>
+                    <button id="send-btn" class="cyber-button">
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </button>
+                </div>
+                <div id="file-preview"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Pro (Login) -->
+    <div id="modal-pro" class="modal-overlay">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-lock"></i> ACCESO RESTRINGIDO</h3>
+            <p>Error de autenticación o cuota excedida. Ingresa una nueva API Key de respaldo:</p>
+            <input type="password" id="new-api-key" placeholder="AI_STUDIO_KEY_...">
+            <button id="save-key-btn" class="cyber-button">REINICIAR SISTEMA</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
